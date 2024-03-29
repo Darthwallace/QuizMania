@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Quest</title>
+    <link href="https://db.onlinewebfonts.com/c/73fedd912ba11f583a359ce4c2e742ed?family=Ninja+Naruto+V1" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../img/simbolo oficial.png" type="image/png">
+</head>
+<body>
+<div class="container"> 
+    <div class="col-sm-6">
+        
+        <div id="titulo">
+            <h1>Naruto Quest</h1>
+        </div>
+        <div class="botoes">
+            
+            <button class="botao" onclick="tocar()" onmouseenter="tocar2()"> Iniciar </button>
+            
+            <audio id="audio2" src="../Audio/Swin.mp3"></audio>
+            <audio id="audio" src="../Audio/naruto.mp3"></audio>
+
+            <button class="botao" onclick="play()" onmouseover="play2()"> Sobre </button>
+
+            <audio id="play" src="../Audio/naruto.mp3"></audio>
+            
+        </div>    
+    </div>
+</div>
+    <div id="overlay"></div>
+    <script src="../js/script.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+#titulo{
+    border-radius: 10px ;
+    background: linear-gradient(to bottom right, #FFA500, #FF0000);
+    border-style: inset;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    font-family: Ninja Naruto V1;
+}
+a {
+    text-decoration: none;
+}
+
+.container {
+    background-image: url('../img/NaruSasu.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    display: flex; /* Define o container como um flex container */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%; /* Define a largura do container */
+    height: 100vh; /* Define a altura do container como 100% da altura da viewport */
+    border: 1px 
+}
+
+.botoes{
+    padding-top: 150px;
+    width: 90px;
+    margin-left: 20px;
+}
+
+.botao{
+    background-color:orange ; /* Cor de fundo */
+    color: black; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Cantos arredondados */
+    cursor: pointer; /* Cursor de mão ao passar por cima */
+    font-size: 16px;
+    display: block;
+    margin-bottom: 30px;
+    width: 200px;
+    font-family: Ninja Naruto V1;
+}
+
+.botao:hover{
+    background-color: #12db18;
+}
