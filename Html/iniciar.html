@@ -10,17 +10,25 @@
 <body>
     <div class="flex-container">
         <div class="quiz">
+        <audio id="audioOpcoes" src="../Audio/naruto.mp3"></audio>
             <div id="pergunta"></div>
             <div class="opcoes">
                 <button class="opcao" id="opcao1"></button>
                 <button class="opcao" id="opcao2"></button>
                 <button class="opcao" id="opcao3"></button>
                 <button class="opcao" id="opcao4"></button>
-                <button class="opcao"><a href="index.html"> Retornar ao menu </a></button>
-                <div id="resultado"></div>
             </div>
+            
         </div>
+        <div id="resultado" class="escondido"></div>
+        <button id="voltar"><a href="index.html"> Retornar ao menu </a></button>
+        <div id="pontuacao"></div>
+        <div id="mensagem"></div>
     </div>
+
+    
     <script src="../js/script.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.js"></script>
 </body>
 </html>
