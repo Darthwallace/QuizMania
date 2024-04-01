@@ -70,13 +70,12 @@ a {
     font-family: Ninja Naruto V1;
     margin-top: 60px;
     margin-left: 820px;
-    
 }
 
 .opcoes{
-    margin-left: 50px;
-    margin-top: 50px;
-    width: 515px;
+    column-count: 2;
+    margin-left: 70px;
+    margin-top: 70px;
 }
 
 .opcao{
@@ -88,21 +87,21 @@ a {
     cursor: pointer; /* Cursor de mão ao passar por cima */
     font-size: 16px;
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     width: 200px;
     font-family: Ninja Naruto V1;
-    margin-left: 160px;
+    transition: all 0.3s ease;
 }
 
 .opcao:hover{
-    padding-bottom: 50px;
-    padding-top: 50px;
     border-style: inset;
-    border-color: black;
     border-radius: 10px;
-    font-size: 30px;
-    text-align: center;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 25px;
 }
+
 
 .quiz{
     border-style: inset;
@@ -121,13 +120,18 @@ a {
     border-radius: 10px;
     border: none; /* Sem borda */; /* Cantos arredondados */
     cursor: pointer; /* Cursor de mão ao passar por cima */
-    position: relative;
     font-size: 16px;
     display: block;
     width: 200px;
     font-family: Ninja Naruto V1;
     margin: 0 auto;
-    margin-top: 40px;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+
+#voltar:hover{
+    padding: 15px 25px;
+    cursor: pointer;
 }
 
 .container {
@@ -155,7 +159,7 @@ a {
     width: 100%; /* Define a largura do container */
     height: 100vh; /* Define a altura do container como 100% da altura da viewport */
     border: 1px; 
-    padding-top:140px;
+    padding-top:300px;
 }
 
 .botoes{
@@ -176,12 +180,14 @@ a {
     margin-bottom: 30px;
     width: 200px;
     font-family: Ninja Naruto V1;
+    transition: all 0.3s ease;
 }
 
 .botao:hover{
-    background-color: #12db18;
+    background-color:  #3aa0be;
+    padding: 15px 15px;
 }
 
 #voltar:hover{
-    background-color: #12db18;
+    background-color: #3aa0be;
 }

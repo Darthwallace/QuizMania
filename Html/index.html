@@ -10,29 +10,19 @@
 </head>
 <body>
 <div class="container"> 
-    <div class="menu">
-        
+    <div class="menu"> 
         <div id="titulo">
             <h1>Naruto Quest</h1>
         </div>
-        <div class="botoes">
-            
-            <button class="botao" onclick="tocar()" onmouseenter="tocar2()"> Iniciar </button>
-            
-            <audio id="audio2" src="../Audio/Swin.mp3"></audio>
-            <audio id="audio" src="../Audio/naruto.mp3"></audio>
-
-            <button class="botao" onclick="play()" onmouseover="play2()"> Sobre </button>
-
-            <audio id="play" src="../Audio/naruto.mp3"></audio>
-            
+        <div class="botoes"> 
+            <button class="botao" onclick="tocar()"> Iniciar </button>
+            <button class="botao" onclick="tocar()"> Sobre </button>
         </div>    
     </div>
+    <audio id="audio" src="../Audio/menu.wav"></audio>
 </div>
-    <div id="overlay"></div>
     <script src="../js/script.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.js"></script>
-    
 </body>
 </html>

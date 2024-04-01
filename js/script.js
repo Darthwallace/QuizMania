@@ -8,29 +8,33 @@ meuBotao.forEach(function(botao){
     })
 })
 
-function tocar2(){
-    var audio2 = document.getElementsByClassName("audio2");
-    audio2.play();
-}
-
 function tocar(){
     var audio = document.getElementById("audio");
-    audio.play();
-
-    setTimeout(function(){
-        window.location.href = "iniciar.html"
-    },2000);
+    audio.play(); 
 }
 
-function play(){
-    var play = document.getElementById("play")
-    play.play();
+var primeiroItem = document.querySelector('.botao:first-child');
+var segundoItem = document.querySelector('.botao:last-child');
+var itens = document.querySelectorAll('.botao');
 
-    setTimeout(function(){
-        window.location.href = "sobre.html"
-    },3000);
-}
-
+itens.forEach(function(iten) {
+    iten.addEventListener('click', function() {
+        switch(iten) {
+            case primeiroItem:
+                setTimeout(function(){
+                     window.location.href = "iniciar.html"
+                },2000);
+                break;
+            case segundoItem:
+                setTimeout(function(){
+                    window.location.href = "sobre.html"
+                },2000);
+                break;
+            default:
+                alert('Classe desconhecida');
+        }
+    });
+});
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -100,7 +104,7 @@ const questoes = [
     {
         pergunta: "Qual o desejo principal do naruto?",
         opcao1: ["Virar programador"],
-        opcao2: ["Ser o hokage da vila"],
+        opcao2: ["Ser o hokage"],
         opcao3: ["Seguir o sasuke"],
         opcao4: ["Namorar a sakura"],
         resposta: "Ser o hokage da vila" 
@@ -157,18 +161,16 @@ const questoes = [
 
 const questoesEmbaralhadas = shuffleArray(questoes);
 
-//Colocar as opções em uma classe para refatorar o codigo
 let currentQuestion = 0;
 let pontuacao = 0;
-const perguntaElemento = document.getElementById('pergunta');
-const opcao1Elemento = document.getElementById('opcao1');
-const opcao2Elemento = document.getElementById('opcao2');
-const opcao3Elemento = document.getElementById('opcao3');
-const opcao4Elemento = document.getElementById('opcao4');
-const resultadoElemento = document.getElementById('resultado');
-const pontuacaoElemento = document.getElementById('pontuacao');
-const mensagemElemento = document.getElementById('mensagem');
-
+const perguntaElemento = document.querySelector('#pergunta');
+const opcao1Elemento = document.querySelector('.opcao:first-child');
+const opcao2Elemento = document.querySelector('.opcao:nth-child(2)');
+const opcao3Elemento = document.querySelector('.opcao:nth-child(3)');
+const opcao4Elemento = document.querySelector('.opcao:last-child');
+const resultadoElemento = document.querySelector('#resultado');
+const pontuacaoElemento = document.querySelector('#pontuacao');
+const mensagemElemento = document.querySelector('#mensagem');
 
 function carregarQuestao(){
     const currentQuestionData = questoes[currentQuestion];
@@ -178,7 +180,7 @@ function carregarQuestao(){
     opcao3Elemento.innerHTML = '';
     opcao4Elemento.innerHTML = '';
 
-    currentQuestionData.opcao1.forEach((option1, index)=>{
+    currentQuestionData.opcao1.forEach((option1)=>{
         const option1Element = document.createElement('div');
         option1Element.textContent = option1;
         option1Element.classList.add('option1');
@@ -186,7 +188,7 @@ function carregarQuestao(){
         opcao1Elemento.appendChild(option1Element);
     });
 
-    currentQuestionData.opcao2.forEach((option2, index)=>{
+    currentQuestionData.opcao2.forEach((option2)=>{
         const option2Element = document.createElement('div');
         option2Element.textContent = option2;
         option2Element.classList.add('option2');
@@ -194,7 +196,7 @@ function carregarQuestao(){
         opcao2Elemento.appendChild(option2Element);
     });
     
-    currentQuestionData.opcao3.forEach((option3, index)=>{
+    currentQuestionData.opcao3.forEach((option3)=>{
         const option3Element = document.createElement('div');
         option3Element.textContent = option3;
         option3Element.classList.add('option3');
@@ -202,7 +204,7 @@ function carregarQuestao(){
         opcao3Elemento.appendChild(option3Element);
     });
 
-    currentQuestionData.opcao4.forEach((option4, index)=>{
+    currentQuestionData.opcao4.forEach((option4)=>{
         const option4Element = document.createElement('div');
         option4Element.textContent = option4;
         option4Element.classList.add('option4');
@@ -213,8 +215,8 @@ function carregarQuestao(){
 
 function selectOption(option){
     const currentQuestionData = questoes[currentQuestion];
+
     if (option === currentQuestionData.resposta) {
-        //Corrigir a parte visual das mensagem via CSS
         pontuacao++;
         resultadoElemento.style.display = 'inline-block';
         resultadoElemento.textContent = 'Resposta correta!! :D'
