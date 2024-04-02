@@ -53,6 +53,7 @@ const questoes = [
         opcao4: ["Shikamaru, Ino E Choji"],
         resposta: "Hinata , Shino e Kiba"
     },
+    /*
     {
         pergunta: "Quais sao os 3 classes de nivel basico de um ninja?",
         opcao1: ["Gennin, Chunnin e Jonnin"],
@@ -61,6 +62,7 @@ const questoes = [
         opcao4: ["Gennin, Jonnin e kazekage"],
         resposta: "Gennin, Chunnin e Jonnin"
     },
+    
     {
         pergunta: "Quais os viloes principais na saga da 'ponte da nevoa'?",
         opcao1: ["Gaara e temari"],
@@ -157,6 +159,7 @@ const questoes = [
         opcao4: ["Gyuuki"],
         resposta: "Kurama"
     }
+*/
 ];  
 
 const questoesEmbaralhadas = shuffleArray(questoes);
@@ -236,19 +239,53 @@ function selectOption(option){
             carregarQuestao(resultadoElemento.style.display = 'none');
         },3000);
     } else {
+            resultadoElemento.style.display = 'none';
+            var sim = document.querySelector('.alternativa:first-child');
+            var nao = document.querySelector('.alternativa:last-child');
+            var texto = document.querySelector('#texto');
+            var alternativas = document.querySelectorAll('.alternativa');
+            sim.style.display = 'block';
+            nao.style.display = 'block';
+            texto.textContent = 'Questoes respondidas! Deseja ver o resultado?';
+            alternativas.forEach(function(alternativa){
+                alternativa.addEventListener('click' , function(){
+                    switch(alternativa){
+                        case sim:
+                                sim.style.display = 'none';
+                                nao.style.display = 'none';
+                                mensagemElemento.style.display = 'block';
+                                pontuacaoElemento.style.display = 'block';
+                                pontuacaoElemento.textContent = `Voce acertou ${pontuacao} questoes`;
+                                mensagemElemento.textContent = 'GAME OVER. THANKS FOR PLAYNG ^^';
+                            setTimeout(function(){
+                                window.location.href = "index.html"
+                            },7000);
+                        case nao:
+                            mensagemElemento.textContent = 'GAME OVER. THANKS FOR PLAYNG ^^';
+                            sim.style.display = 'none';
+                            nao.style.display = 'none';
+                            setTimeout(function(){
+                                window.location.href = "index.html"
+                            },7000);
+                        }
+                })
+            })
+        /*    
+        } else {
         setTimeout(function(){
             resultadoElemento.style.display = 'none';
             mensagemElemento.style.display = 'block';
             pontuacaoElemento.style.display = 'block';
-            pontuacaoElemento.textContent = `Voce acertou ${pontuacao}`
+            pontuacaoElemento.textContent = `Voce acertou ${pontuacao} questoes`;
             mensagemElemento.textContent = 'GAME OVER. THANKS FOR PLAYNG ^^';
         },3000)
         setTimeout(function(){
             window.location.href = "index.html"
         },7000);
+      }
+      */
+        }
     }
-}
-
 carregarQuestao();
 
 

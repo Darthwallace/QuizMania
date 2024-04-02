@@ -20,6 +20,12 @@ a {
     width: 400px;
 }
 
+body {
+    background-image: url(../img/Vila\ oculta\ da\ folha.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #resultado{
     background-color:rgb(4, 49, 199) ; /* Cor de fundo */
     color: white; /* Cor do texto */
@@ -30,6 +36,22 @@ a {
     display: none;
     width: 200px;
     font-family: Ninja Naruto V1;
+    margin-left: 350px;
+    margin-top: 40px;
+}
+
+#texto{
+    background-color:rgb(4, 49, 199) ; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Sem borda */; /* Cantos arredondados */
+    cursor: pointer; /* Cursor de mão ao passar por cima */
+    font-size: 20px;
+    display: none;
+    width: 200px;
+    font-family: Ninja Naruto V1;
+    margin-left: 350px;
+    margin-top: 40px;
 }
 
 #pergunta{
@@ -45,15 +67,16 @@ a {
 }
 
 #mensagem {
-    background-color:rgb(4, 49, 199) ; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
-    border: none; /* Sem borda */; /* Cantos arredondados */
-    cursor: pointer; /* Cursor de mão ao passar por cima */
+    background-color:rgb(4, 49, 199) ; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
     font-size: 20px;
     display: none;
-    width: 200px;
     font-family: Ninja Naruto V1;
+    float: right;
+    width: 200px;
     margin-top: 40px;
     margin-left: 820px;
 }
@@ -66,10 +89,36 @@ a {
     cursor: pointer; /* Cursor de mão ao passar por cima */
     font-size: 20px;
     display: none;
-    width: 200px;
+    width: 180px;
     font-family: Ninja Naruto V1;
     margin-top: 60px;
     margin-left: 820px;
+}
+
+
+.alternativas{
+    margin-right: 80px;
+}
+
+.alternativa:hover{
+    background-color: #3aa0be;
+}
+
+
+.alternativa{
+    background-color:orange ; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Cantos arredondados */
+    cursor: pointer; /* Cursor de mão ao passar por cima */
+    font-size: 16px;
+    display: none;
+    float: right;
+    margin-right: 30px;
+    margin-top: 350px;
+    width: 200px;
+    font-family: Ninja Naruto V1; 
 }
 
 .opcoes{
@@ -111,7 +160,9 @@ a {
     margin: 0 auto;
     width: 620px;
     padding-bottom: 10px;
+    margin-top: 140px;
 }
+
 
 #voltar{
     background-color:rgb(4, 49, 199) ; /* Cor de fundo */
@@ -122,16 +173,10 @@ a {
     cursor: pointer; /* Cursor de mão ao passar por cima */
     font-size: 16px;
     display: block;
-    width: 200px;
     font-family: Ninja Naruto V1;
-    margin: 0 auto;
     transition: all 0.3s ease;
-    margin-top: 30px;
-}
-
-#voltar:hover{
-    padding: 15px 25px;
-    cursor: pointer;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 .container {
@@ -148,18 +193,20 @@ a {
 }
 
 .flex-container{
-    background-image: url(../img/Vila\ oculta\ da\ folha.png);
+    background-image: url(../img/sala_ninja.png);
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 10px;
-    display: block; /* Define o container como um flex container */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    text-align: center;
-    width: 100%; /* Define a largura do container */
-    height: 100vh; /* Define a altura do container como 100% da altura da viewport */
-    border: 1px; 
-    padding-top:300px;
+    border-radius: 10px; 
+    border: 1px;
+    width: 100%;
+    height: 70vh;
+    margin-top: 130px;
+}
+
+#imagem{
+    float: left;
+    margin-top: 60px;
+    margin-left: 90px;
 }
 
 .botoes{
