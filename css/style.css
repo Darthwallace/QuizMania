@@ -7,36 +7,33 @@
     border-style: inset;
     border: none;
 }
-a {
-    text-decoration: none;
-    color: white;
-}
 
-.menu{
-    border-style: inset;
+#voltar{
+    background-color:orange  ; 
+    color: white; 
+    padding: 10px 20px; 
     border-radius: 10px;
-    background: #12db196b;
-    border: none;
-    width: 400px;
-}
-
-body {
-    background-image: url(../img/Vila\ oculta\ da\ folha.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    border: none; 
+    cursor: pointer; 
+    font-size: 16px;
+    display: block;
+    font-family: Ninja Naruto V1;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 #resultado{
-    background-color:rgb(4, 49, 199) ; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
-    border: none; /* Sem borda */; /* Cantos arredondados */
-    cursor: pointer; /* Cursor de mão ao passar por cima */
+    background:linear-gradient(to bottom right, #FFA500, #FF0000); 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
     font-size: 20px;
     display: none;
     width: 200px;
     font-family: Ninja Naruto V1;
-    margin-left: 350px;
+    margin-left: 840px;
     margin-top: 40px;
 }
 
@@ -87,26 +84,63 @@ body {
     display: none;
     width: 200px;
     font-family: Ninja Naruto V1;
-    margin-top: 60px;
-    margin-left: 820px;
+    /*margin-left: 820px; margin-top: 30px; */
     text-align: center;
+}
+
+.encerramento{
+    background:linear-gradient(to bottom right, #FFA500, #FF0000);
+    color: white; 
+    font-size: 20px;
+    padding: 20px 20px;
+    display: none;
+    font-family: Ninja Naruto V1;
+    margin-left: 730px; 
+    width: 300px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.palavra{
+    margin-top: 200px;
+    margin-left: 20px;
+}
+
+#imagem{
+    float: left;
+    margin-top: 60px;
+    margin-left: 90px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    background-image: url(../img/Vila\ oculta\ da\ folha.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu{
+    border-style: inset;
+    border-radius: 10px;
+    border: none;
+    width: 400px;
 }
 
 .alternativas{
     margin-right: 700px;
 }
 
-.alternativa:hover{
-    background-color: #3aa0be;
-}
-
 .alternativa{
-    background-color:orange ; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
-    border: none; /* Sem borda */
-    border-radius: 4px; /* Cantos arredondados */
-    cursor: pointer; /* Cursor de mão ao passar por cima */
+    background-color:orange ; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
     font-size: 16px;
     display: none;
     float: right;
@@ -116,6 +150,8 @@ body {
     font-family: Ninja Naruto V1; 
 }
 
+
+
 .opcoes{
     column-count: 2;
     margin-left: 70px;
@@ -123,27 +159,18 @@ body {
 }
 
 .opcao{
-    background-color:orange ; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
-    border: none; /* Sem borda */
-    border-radius: 4px; /* Cantos arredondados */
-    cursor: pointer; /* Cursor de mão ao passar por cima */
+    background-color:orange ; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
     font-size: 16px;
     display: block;
     margin-bottom: 20px;
     width: 200px;
     font-family: Ninja Naruto V1;
     transition: all 0.3s ease;
-}
-
-.opcao:hover{
-    border-style: inset;
-    border-radius: 10px;
-    border: none;
-    padding: 10px 10px;
-    cursor: pointer;
-    font-size: 25px;
 }
 
 .quiz{
@@ -153,22 +180,7 @@ body {
     margin: 0 auto;
     width: 620px;
     padding-bottom: 10px;
-    margin-top: 140px;
-}
-
-#voltar{
-    background-color:rgb(4, 49, 199) ; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
-    border-radius: 10px;
-    border: none; /* Sem borda */; /* Cantos arredondados */
-    cursor: pointer; /* Cursor de mão ao passar por cima */
-    font-size: 16px;
-    display: block;
-    font-family: Ninja Naruto V1;
-    transition: all 0.3s ease;
-    margin-left: 20px;
-    margin-bottom: 20px;
+    margin-top: 130px;
 }
 
 .container {
@@ -176,11 +188,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
-    display: flex; /* Define o container como um flex container */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    width: 100%; /* Define a largura do container */
-    height: 100vh; /* Define a altura do container como 100% da altura da viewport */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    height: 100vh; 
     border: 1px; 
 }
 
@@ -193,12 +205,7 @@ body {
     width: 100%;
     height: 70vh;
     margin-top: 130px;
-}
-
-#imagem{
-    float: left;
-    margin-top: 60px;
-    margin-left: 90px;
+    box-shadow: 6px 6px 12px rgba(17, 17, 17, 0.842);
 }
 
 .botoes{
@@ -229,4 +236,17 @@ body {
 
 #voltar:hover{
     background-color: #3aa0be;
+}
+
+.alternativa:hover{
+    background-color: #3aa0be;
+}
+
+.opcao:hover{
+    border-style: inset;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 25px;
 }

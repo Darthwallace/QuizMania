@@ -47,10 +47,12 @@ function shuffleArray(array) {
 const questoes = [
     {
         pergunta: "Quais sao os integrantes do time 8?",
-        opcao1: ["Naruto , Sasuke e Sakura"],
-        opcao2: ["Neji , Tenten e Rock Lee"],
-        opcao3: ["Hinata , Shino e Kiba"],
-        opcao4: ["Shikamaru, Ino E Choji"],
+        opcoes:[
+            ["Naruto , Sasuke e Sakura"],
+            ["Neji , Tenten e Rock Lee"],
+            ["Hinata , Shino e Kiba"],
+            ["Shikamaru, Ino E Choji"],
+        ],
         resposta: "Hinata , Shino e Kiba"
     },
     /*
@@ -162,6 +164,10 @@ const questoes = [
 */
 ];  
 
+questoes.forEach(function(questao) {
+    questao.opcoes = shuffleArray(questao.opcoes);
+});
+
 const questoesEmbaralhadas = shuffleArray(questoes);
 
 let currentQuestion = 0;
@@ -172,45 +178,46 @@ const opcao2Elemento = document.querySelector('.opcao:nth-child(2)');
 const opcao3Elemento = document.querySelector('.opcao:nth-child(3)');
 const opcao4Elemento = document.querySelector('.opcao:last-child');
 const resultadoElemento = document.querySelector('#resultado');
-const pontuacaoElemento = document.querySelector('#pontuacao');
-var mensagemElemento = document.querySelector('#mensagem');
-
+const pontuacaoElemento = document.querySelector('.encerramento:first-child');
+const mensagemElemento = document.querySelector('.encerramento:last-child')
+const palavraElemento = document.querySelectorAll('.palavra');
 
 function carregarQuestao(){
     const currentQuestionData = questoes[currentQuestion];
     perguntaElemento.textContent = currentQuestionData.pergunta;
-    opcao1Elemento.innerHTML = '';
-    opcao2Elemento.innerHTML = '';
-    opcao3Elemento.innerHTML = '';
-    opcao4Elemento.innerHTML = '';
+    opcao1Elemento.textContent = currentQuestionData.opcoes[0];
+    opcao2Elemento.textContent = currentQuestionData.opcoes[1];
+    opcao3Elemento.textContent = currentQuestionData.opcoes[2];
+    opcao4Elemento.textContent = currentQuestionData.opcoes[3];
+    opcao1Elemento.innerHTML = ''
+    opcao2Elemento.innerHTML = ''
+    opcao3Elemento.innerHTML = ''
+    opcao4Elemento.innerHTML = ''
 
-    currentQuestionData.opcao1.forEach((option1)=>{
+    currentQuestionData.opcoes[0].forEach((option1)=>{
         const option1Element = document.createElement('div');
-        option1Element.textContent = option1;
+        option1Element.textContent = (option1);
         option1Element.classList.add('option1');
         option1Element.addEventListener('click' , () => selectOption(option1));
         opcao1Elemento.appendChild(option1Element);
     });
-
-    currentQuestionData.opcao2.forEach((option2)=>{
+    currentQuestionData.opcoes[1].forEach((option2)=>{
         const option2Element = document.createElement('div');
-        option2Element.textContent = option2;
+        option2Element.textContent = (option2);
         option2Element.classList.add('option2');
         option2Element.addEventListener('click' , () => selectOption(option2));
         opcao2Elemento.appendChild(option2Element);
     });
-    
-    currentQuestionData.opcao3.forEach((option3)=>{
+    currentQuestionData.opcoes[2].forEach((option3)=>{
         const option3Element = document.createElement('div');
-        option3Element.textContent = option3;
+        option3Element.textContent = (option3);
         option3Element.classList.add('option3');
-        option3Element.addEventListener('click' , () => selectOption(option3));
+        option3Element.addEventListener('click' , () => selectOption(option3))
         opcao3Elemento.appendChild(option3Element);
     });
-
-    currentQuestionData.opcao4.forEach((option4)=>{
+    currentQuestionData.opcoes[3].forEach((option4)=>{
         const option4Element = document.createElement('div');
-        option4Element.textContent = option4;
+        option4Element.textContent = (option4);
         option4Element.classList.add('option4');
         option4Element.addEventListener('click' , () => selectOption(option4));
         opcao4Elemento.appendChild(option4Element);
@@ -240,19 +247,23 @@ function selectOption(option){
             carregarQuestao(resultadoElemento.style.display = 'none');
         },3000);
     } else {
-            resultadoElemento.style.display = 'none';
-            perguntaElemento.style.display = 'none';
-            opcao1Elemento.style.display = 'none';
-            opcao2Elemento.style.display = 'none';
-            opcao3Elemento.style.display = 'none';
-            opcao4Elemento.style.display = 'none';
+            setTimeout(function(){
+                resultadoElemento.style.display = 'none';
+                perguntaElemento.style.display = 'none';
+                opcao1Elemento.style.display = 'none';
+                opcao2Elemento.style.display = 'none';
+                opcao3Elemento.style.display = 'none';
+                opcao4Elemento.style.display = 'none';
+            },3000);
             var sim = document.querySelector('.alternativa:first-child');
             var nao = document.querySelector('.alternativa:last-child');
             var texto = document.querySelector('#texto');
             var alternativas = document.querySelectorAll('.alternativa');
-            texto.style.display = 'block';
-            sim.style.display = 'block';
-            nao.style.display = 'block';
+            setTimeout(function(){
+                texto.style.display = 'block';
+                sim.style.display = 'block';
+                nao.style.display = 'block';
+            },3000);
             alternativas.forEach(function(alternativa){
                 alternativa.addEventListener('click' , function(){
                     switch(alternativa){
@@ -260,8 +271,9 @@ function selectOption(option){
                             texto.style.display = 'none';
                             sim.style.display = 'none';
                             nao.style.display = 'none';
-                            mensagemElemento.style.display = 'block';
+                            //encerramentoElemento.style.display = 'block';
                             pontuacaoElemento.style.display = 'block';
+                            mensagemElemento.style.display = 'block'
                             pontuacaoElemento.textContent = `Voce acertou ${pontuacao} questoes`;
                             mensagemElemento.textContent = 'GAME OVER. THANKS FOR PLAYNG ^^';
                             setTimeout(function(){
@@ -272,7 +284,8 @@ function selectOption(option){
                             texto.style.display = 'none';
                             sim.style.display = 'none';
                             nao.style.display = 'none';
-                            mensagemElemento.textContent = 'Obrigado por jogar. Ate mais jovem!';
+                            mensagemElemento.style.display = 'block';
+                            mensagemElemento.textContent = 'GAME OVER. THANKS FOR PLAYNG ^^';
                             setTimeout(function(){
                                 window.location.href = "index.html"
                             },7000);
@@ -282,20 +295,6 @@ function selectOption(option){
                         }
                 })
             })
-        /*    
-        } else {
-        setTimeout(function(){
-            resultadoElemento.style.display = 'none';
-            mensagemElemento.style.display = 'block';
-            pontuacaoElemento.style.display = 'block';
-            pontuacaoElemento.textContent = `Voce acertou ${pontuacao} questoes`;
-            mensagemElemento.textContent = 'GAME OVER. THANKS FOR PLAYNG ^^';
-        },3000)
-        setTimeout(function(){
-            window.location.href = "index.html"
-        },7000);
-      }
-      */
         }
     }
 carregarQuestao();
