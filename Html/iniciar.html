@@ -11,12 +11,17 @@
     <div class="flex-container">
         <button id="voltar"><a href="index.html"> Retornar ao menu </a></button>
         <img id="imagem" src="../img/foto.jpg">
-        <div id="mensagem"></div>
-        <div id="texto"></div>
-        <div class="alternativas">
-            <button class="alternativa"> SIM </button>
-            <button class="alternativa"> NAO </button>
-        </div>  
+        <div class="final">
+            <h2 id="texto">Questoes respondidas. Deseja ver o resultado?</h2>
+            <div class="alternativas">
+                <button class="alternativa"> SIM </button>
+                <button class="alternativa"> NAO </button>
+            </div>  
+        </div>
+        <div class="palavra">
+            <div id="mensagem"></div>
+            <div id="pontuacao"></div>
+        </div>
         <div class="quiz">
         <audio id="audioOpcoes" src="../Audio/Musica 2.wav"></audio>
             <div id="pergunta"></div>
@@ -27,9 +32,7 @@
                     <button class="opcao"></button>
                 </div>
         </div>
-        
-        <div id="resultado" class="escondido"></div>
-        <div id="pontuacao"></div> 
+        <div id="resultado" class="escondido"></div> 
     </div>
     <script src="../js/script.js"></script>
     <script src="../js/bootstrap.min.js"></script>

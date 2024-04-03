@@ -41,17 +41,16 @@ body {
 }
 
 #texto{
-    background-color:rgb(4, 49, 199) ; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
-    border: none; /* Sem borda */; /* Cantos arredondados */
-    cursor: pointer; /* Cursor de mão ao passar por cima */
-    font-size: 20px;
-    display: none;
-    width: 200px;
+    background: linear-gradient(to bottom right, #FFA500, #FF0000);
+    color: white;
+    width: 600px;
+    padding: 10px 10px;
+    margin-left: 640px;
+    margin-top: 170px;
     font-family: Ninja Naruto V1;
-    margin-left: 350px;
-    margin-top: 40px;
+    text-align: center;
+    border-radius: 3px;
+    display: none;
 }
 
 #pergunta{
@@ -67,43 +66,39 @@ body {
 }
 
 #mensagem {
-    background-color:rgb(4, 49, 199) ; 
+    background:linear-gradient(to bottom right, #FFA500, #FF0000);
+    color: white; 
+    font-size: 20px;
+    padding: 10px 10px;
+    display: none;
+    font-family: Ninja Naruto V1;
+    margin-left: 730px;
+    width: 400px;
+    text-align: center;
+}
+
+#pontuacao{
+    background:linear-gradient(to bottom right, #FFA500, #FF0000);
     color: white; 
     padding: 10px 20px; 
     border: none; 
     cursor: pointer; 
     font-size: 20px;
     display: none;
-    font-family: Ninja Naruto V1;
-    float: right;
     width: 200px;
-    margin-top: 40px;
-    margin-left: 820px;
-}
-
-#pontuacao{
-    background-color:rgb(4, 49, 199) ; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
-    border: none; /* Sem borda */; /* Cantos arredondados */
-    cursor: pointer; /* Cursor de mão ao passar por cima */
-    font-size: 20px;
-    display: none;
-    width: 180px;
     font-family: Ninja Naruto V1;
     margin-top: 60px;
     margin-left: 820px;
+    text-align: center;
 }
 
-
 .alternativas{
-    margin-right: 80px;
+    margin-right: 700px;
 }
 
 .alternativa:hover{
     background-color: #3aa0be;
 }
-
 
 .alternativa{
     background-color:orange ; /* Cor de fundo */
@@ -116,7 +111,7 @@ body {
     display: none;
     float: right;
     margin-right: 30px;
-    margin-top: 350px;
+    margin-top: 50px;
     width: 200px;
     font-family: Ninja Naruto V1; 
 }
@@ -151,18 +146,15 @@ body {
     font-size: 25px;
 }
 
-
 .quiz{
     border-style: inset;
     border-radius: 10px;
-    background: #12db196b;
     border: none;
     margin: 0 auto;
     width: 620px;
     padding-bottom: 10px;
     margin-top: 140px;
 }
-
 
 #voltar{
     background-color:rgb(4, 49, 199) ; /* Cor de fundo */

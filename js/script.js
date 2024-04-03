@@ -173,7 +173,8 @@ const opcao3Elemento = document.querySelector('.opcao:nth-child(3)');
 const opcao4Elemento = document.querySelector('.opcao:last-child');
 const resultadoElemento = document.querySelector('#resultado');
 const pontuacaoElemento = document.querySelector('#pontuacao');
-const mensagemElemento = document.querySelector('#mensagem');
+var mensagemElemento = document.querySelector('#mensagem');
+
 
 function carregarQuestao(){
     const currentQuestionData = questoes[currentQuestion];
@@ -240,33 +241,44 @@ function selectOption(option){
         },3000);
     } else {
             resultadoElemento.style.display = 'none';
+            perguntaElemento.style.display = 'none';
+            opcao1Elemento.style.display = 'none';
+            opcao2Elemento.style.display = 'none';
+            opcao3Elemento.style.display = 'none';
+            opcao4Elemento.style.display = 'none';
             var sim = document.querySelector('.alternativa:first-child');
             var nao = document.querySelector('.alternativa:last-child');
             var texto = document.querySelector('#texto');
             var alternativas = document.querySelectorAll('.alternativa');
+            texto.style.display = 'block';
             sim.style.display = 'block';
             nao.style.display = 'block';
-            texto.textContent = 'Questoes respondidas! Deseja ver o resultado?';
             alternativas.forEach(function(alternativa){
                 alternativa.addEventListener('click' , function(){
                     switch(alternativa){
                         case sim:
-                                sim.style.display = 'none';
-                                nao.style.display = 'none';
-                                mensagemElemento.style.display = 'block';
-                                pontuacaoElemento.style.display = 'block';
-                                pontuacaoElemento.textContent = `Voce acertou ${pontuacao} questoes`;
-                                mensagemElemento.textContent = 'GAME OVER. THANKS FOR PLAYNG ^^';
-                            setTimeout(function(){
-                                window.location.href = "index.html"
-                            },7000);
-                        case nao:
-                            mensagemElemento.textContent = 'GAME OVER. THANKS FOR PLAYNG ^^';
+                            texto.style.display = 'none';
                             sim.style.display = 'none';
                             nao.style.display = 'none';
+                            mensagemElemento.style.display = 'block';
+                            pontuacaoElemento.style.display = 'block';
+                            pontuacaoElemento.textContent = `Voce acertou ${pontuacao} questoes`;
+                            mensagemElemento.textContent = 'GAME OVER. THANKS FOR PLAYNG ^^';
                             setTimeout(function(){
                                 window.location.href = "index.html"
                             },7000);
+                            break;
+                        case nao:
+                            texto.style.display = 'none';
+                            sim.style.display = 'none';
+                            nao.style.display = 'none';
+                            mensagemElemento.textContent = 'Obrigado por jogar. Ate mais jovem!';
+                            setTimeout(function(){
+                                window.location.href = "index.html"
+                            },7000);
+                            break;
+                        default:
+                            alert('Nao foi entrado nada');
                         }
                 })
             })
