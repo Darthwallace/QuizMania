@@ -1,8 +1,8 @@
 var meuBotao = document.querySelectorAll('.opcao');
 var meuMenu = document.querySelectorAll('.botao');
+var MeuSobre = document.querySelectorAll('.referencia');
 var meuAudio = document.getElementById('audioOpcoes');
 var myAudio = document.getElementById('myAudio');
-
 
 
 meuBotao.forEach(function(botao){
@@ -220,7 +220,7 @@ const mensagemElemento = document.querySelector('.encerramento:last-child')
 const palavraElemento = document.querySelectorAll('.palavra');
 const imagemElemento = document.querySelector('#imagem');
 const criarImagem = document.createElement('img');
-
+const quizElemento = document.querySelectorAll('.quiz');
 
 criarImagem.src = '../img/iruka idle.png';
 imagemElemento.appendChild(criarImagem);
@@ -301,6 +301,7 @@ function selectOption(option){
         },3000);
     } else {
             setTimeout(function(){
+                
                 resultadoElemento.style.display = 'none';
                 perguntaElemento.style.display = 'none';
                 opcao1Elemento.style.display = 'none';
